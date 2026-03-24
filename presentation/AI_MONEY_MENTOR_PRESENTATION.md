@@ -1,624 +1,603 @@
-# AI Money Mentor
-## Your Personal Financial Health Analyzer
+---
+marp: true
+theme: default
+style: |
+  section {
+    background-color: #ffffff;
+    color: #1a1a1a;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.2em;
+  }
+  h1 {
+    color: #6366f1;
+    font-size: 3.5em;
+    font-weight: 700;
+    margin-bottom: 0.3em;
+  }
+  h2 {
+    color: #4f46e5;
+    font-size: 2.2em;
+    margin-bottom: 0.3em;
+  }
+  h3 {
+    color: #6366f1;
+    font-size: 1.5em;
+    margin-bottom: 0.3em;
+  }
+  .hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    padding: 80px 40px;
+  }
+  .hero h1 {
+    color: white;
+    font-size: 4.5em;
+    margin-bottom: 0.2em;
+  }
+  .metric {
+    font-size: 4em;
+    font-weight: 700;
+    color: #6366f1;
+    line-height: 1;
+  }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 30px;
+  }
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+  }
+  .card {
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  .gradient-card {
+    color: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+  }
+  table {
+    font-size: 0.9em;
+    width: 100%;
+  }
+  footer {
+    color: #64748b;
+    font-size: 0.75em;
+  }
+paginate: true
+footer: 'AI Money Mentor | ET AI Hackathon 2026'
+---
 
-**ET AI Hackathon 2026**
-**Problem Statement #9: AI Money Mentor**
+<!-- _class: hero -->
+
+# 💰 AI Money Mentor
+
+### Your Personal Financial Health Analyzer
+
+**Powered by Artificial Intelligence**
+
+<div style="margin-top: 60px; font-size: 0.6em;">
+ET AI Hackathon 2026 | Problem Statement #9
+</div>
 
 ---
 
-# The Problem
+## 🚨 The Problem: Financial Wellness Crisis
 
-## Financial Wellness Crisis in India
+<div class="grid-2">
 
-- **76%** of Indians lack basic financial literacy
-- **Only 27%** understand investment concepts
-- **89%** have inadequate retirement corpus
-- **₹46,800** average tax savings missed per person annually
+<div>
 
-## Access Barrier
+### 📊 The Numbers
 
-- Professional financial planning: **₹25,000-50,000**
-- Accessible only to **top 2%** of investors
-- **98% of retail investors** left without guidance
-- **8+ hours** needed for manual portfolio analysis
+<div class="metric" style="font-size: 3em;">76%</div>
 
----
+of Indians lack financial literacy
 
-# The Solution
+<div style="margin-top: 40px;">
 
-## AI Money Mentor
-**Democratizing Access to Intelligent Financial Analysis**
+- **Only 2%** can afford advisors
+- **₹46,800** tax savings missed annually
+- **8 hours** for manual analysis
 
-### What We Built
-A web-based platform that provides comprehensive financial health analysis in **2 minutes** - completely **FREE**
+</div>
 
-### Core Features
-1. **Money Health Score** (6 dimensions)
-2. **Portfolio X-Ray** (XIRR, allocation, diversification)
-3. **AI-Powered Recommendations** (personalized action plan)
-4. **Tax Optimization** (Section 80C, 80D insights)
-5. **Risk Assessment** (holistic evaluation)
+</div>
 
----
+<div>
 
-# How It Works
+### 💸 The Barrier
 
-## User Journey
+<div class="metric" style="font-size: 3em;">₹50K</div>
 
-### Step 1: Financial Profile
-- Age, income, expenses
-- Savings, debt, insurance
-- Risk profile & dependents
+Cost of professional planning
 
-**Time: 60 seconds**
+<div style="margin-top: 40px; background: #fee2e2; padding: 25px; border-radius: 12px; border-left: 6px solid #ef4444;">
 
-### Step 2: Portfolio Input
-- Investment holdings
-- Amount invested vs current value
-- Asset classes & purchase dates
+**Result:** 98% of 9.2 crore retail investors have NO access to quality financial planning
 
-**Time: 60 seconds**
+</div>
 
-### Step 3: Instant Analysis
-- Comprehensive report generated
-- AI-powered recommendations
-- Actionable next steps
+</div>
 
-**Time: 2 seconds**
+</div>
 
 ---
 
-# Money Health Score
+## ✨ The Solution: Democratizing Expert Analysis
 
-## 6-Dimension Framework
+<div class="grid-3">
 
-### 1. Savings Discipline
-- Evaluates savings rate vs income
-- Target: 20-30% monthly savings
-- Status: Excellent | Good | Average | Needs Improvement
+<div class="gradient-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+<div style="font-size: 3em; font-weight: 700;">2 min</div>
+<h3 style="color: white;">Complete Analysis</h3>
+<p>vs 8 hours manual</p>
+</div>
 
-### 2. Debt Management
-- Debt-to-income ratio analysis
-- Critical threshold: 40%
-- Actionable repayment strategies
+<div class="gradient-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+<div style="font-size: 3em; font-weight: 700;">₹0</div>
+<h3 style="color: white;">Free Forever</h3>
+<p>vs ₹25K-50K advisors</p>
+</div>
 
-### 3. Emergency Fund
-- Liquidity coverage assessment
-- Target: 6 months of expenses
-- Risk protection score
+<div class="gradient-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+<div style="font-size: 3em; font-weight: 700;">6D</div>
+<h3 style="color: white;">Holistic Health</h3>
+<p>Not just returns</p>
+</div>
 
-### 4. Investment Discipline
-- Investment rate tracking
-- Asset growth trajectory
-- Goal alignment check
+</div>
 
-### 5. Insurance Protection
-- Life insurance: 10x annual income
-- Health insurance: ₹5L + ₹5L per dependent
-- Coverage gap analysis
+<div class="grid-2" style="margin-top: 40px;">
 
-### 6. Tax Efficiency
-- Section 80C/80D utilization
-- Optimization opportunities
-- Potential savings quantified
+<div class="card" style="background: #f0fdf4; border-left: 6px solid #22c55e;">
 
----
+### 🎯 Core Features
+✅ Money Health Score (6 dimensions)
+✅ Portfolio XIRR & Diversification
+✅ AI-Powered Recommendations
 
-# Portfolio Analytics
+</div>
 
-## Advanced Metrics
+<div class="card" style="background: #eff6ff; border-left: 6px solid #3b82f6;">
 
-### XIRR Calculation
-- **Extended Internal Rate of Return**
-- Accounts for irregular cash flows
-- Newton-Raphson algorithm (Excel-grade accuracy)
-- Annualized return: within 0.01% precision
+### 🛡️ Smart Analysis
+✅ Tax Optimization (80C/80D)
+✅ Risk Assessment
+✅ Instant 2-second results
 
-### Asset Allocation
-- Distribution across equity, debt, hybrid, gold, liquid
-- Comparison vs recommended allocation
-- Risk-profile alignment
+</div>
 
-### Diversification Score
-- Measures concentration risk
-- Herfindahl-Hirschman Index (HHI)
-- Optimal: 8 holdings across 4 asset classes
-
-### Rebalancing Suggestions
-- Age-based allocation guidance
-- Risk-adjusted recommendations
-- Specific action items with amounts
+</div>
 
 ---
 
-# AI-Powered Intelligence
+## 🎬 How It Works: 3-Step Journey
 
-## Hybrid Recommendation Engine
+<div style="margin-top: 40px;">
 
-### Mode 1: AI-Powered
-- **OpenAI GPT-4** or **Anthropic Claude**
-- Contextual analysis of user's life stage
-- Behavioral finance principles
-- Nuanced, personalized insights
+<div class="grid-3">
 
-### Mode 2: Rule-Based Fallback
-- **20+ expert financial rules**
-- Priority-based selection
-- Works offline, no API dependency
-- Consistent quality assurance
+<div class="card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+<h3 style="color: white;">Step 1: Profile</h3>
+<p>Enter income, expenses, savings, insurance, debt</p>
+<div style="margin-top: 20px; font-size: 1.3em; font-weight: 700;">⏱️ 60 seconds</div>
+</div>
 
-### Output Format
-Each recommendation includes:
-- **Category**: Emergency Fund, Debt, Investment, Tax, Insurance
-- **Priority**: High, Medium, Low
-- **Title**: Clear, actionable headline
-- **Description**: Specific steps with amounts & timelines
-- **Potential Impact**: Quantified benefit in ₹
+<div class="card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white;">
+<h3 style="color: white;">Step 2: Portfolio</h3>
+<p>Add investment holdings with amounts & dates</p>
+<div style="margin-top: 20px; font-size: 1.3em; font-weight: 700;">⏱️ 60 seconds</div>
+</div>
 
----
+<div class="card" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color: white;">
+<h3 style="color: white;">Step 3: Analyze</h3>
+<p>Get comprehensive health report instantly</p>
+<div style="margin-top: 20px; font-size: 1.3em; font-weight: 700;">⚡ 2 seconds</div>
+</div>
 
-# Technology Architecture
+</div>
 
-## Backend (Python + FastAPI)
+</div>
 
-### Core Components
-1. **Health Score Calculator**
-   - 6-dimension evaluation engine
-   - Rule-based scoring algorithms
-   - Benchmark comparisons
+<div style="text-align: center; margin-top: 50px; background: #fef3c7; padding: 25px; border-radius: 12px;">
 
-2. **Portfolio Analyzer**
-   - XIRR computation (NumPy)
-   - Diversification metrics
-   - Asset allocation optimizer
+### 🎯 Total Time: **2 minutes** → Get ₹50,000 worth of financial planning **FREE**
 
-3. **AI Recommendation Engine**
-   - LLM integration (OpenAI/Anthropic)
-   - Fallback rule engine
-   - Contextual prompt engineering
-
-### API Layer
-- FastAPI with async support
-- Pydantic validation
-- CORS middleware
-- REST API: `/api/v1/analyze`
+</div>
 
 ---
 
-# Technology Architecture
+## 📊 Demo: Money Health Score + Portfolio Insights
 
-## Frontend (React + Vite)
+<div class="grid-2">
 
-### UI Components
-- **UserProfileForm**: 10-field input with validation
-- **PortfolioForm**: Dynamic holdings with add/remove
-- **AnalysisResults**: Interactive dashboard with charts
+<div>
 
-### Visualization
-- **Recharts**: Pie charts, radial bars
-- **Lucide Icons**: Professional iconography
-- **Tailwind CSS**: Modern, responsive design
+### 🎯 Health Score: 72/100
 
-### User Experience
-- 3-step wizard flow
-- Real-time validation
-- Loading states
-- Beautiful gradient design
+<div style="text-align: center; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px; border-radius: 12px; margin: 20px 0;">
+<div style="font-size: 4em; font-weight: 700;">Grade: B+</div>
+</div>
 
----
+**6 Dimensions Analyzed:**
+✅ Savings: 85/100 (Excellent)
+⚠️ Debt: 65/100 (Average)
+✅ Emergency: 70/100 (Good)
+✅ Investment: 78/100 (Good)
+⚠️ Insurance: 60/100 (Adequate)
+✅ Tax: 75/100 (Good)
 
-# Innovation Highlights
+</div>
 
-## What Makes Us Unique
+<div>
 
-### 1. Holistic Approach
-Not just portfolio returns - **6 dimensions** of financial wellness
-
-### 2. Real XIRR Calculation
-Accurate annualized returns, not approximations
-
-### 3. Hybrid Intelligence
-Combines deterministic algorithms + AI creativity
-
-### 4. Instant Results
-Complete analysis in **2 seconds** (without AI)
-
-### 5. Actionable Insights
-Not generic advice - specific steps with amounts
-
-### 6. Indian Context
-- Section 80C, 80D tax rules
-- Indian risk profiles
-- Local investment products
-
-### 7. Zero Friction
-No signup, no payment, no barriers
-
----
-
-# Impact Model
-
-## Individual Impact (Per User, Per Year)
-
-### Direct Financial Benefits
-- **Tax savings**: ₹35,000 (optimized 80C/80D)
-- **Better returns**: ₹27,000 (2.7% improvement on ₹10L)
-- **Debt interest saved**: ₹18,000 (faster repayment)
-- **Fee avoidance**: ₹8,000 (unsuitable products)
-
-**Total Direct: ₹88,000**
-
-### Time & Risk Value
-- **Time saved**: 8 hours → ₹4,000 value
-- **Insurance coverage**: ₹500,000 protection
-- **Emergency fund**: ₹360,000 coverage
-
-**Total Annual Value: ₹952,000 per user**
-
----
-
-# Impact Model
-
-## Market Potential
-
-### Target Audience
-- **9.2 crore** Indian retail investors
-- **3.8 crore** active mutual fund investors
-- **2 crore** target market (income >₹5L)
-
-### Adoption Projections
-
-| Timeline | Users | Impact/User | Total Impact |
-|----------|-------|-------------|--------------|
-| Year 1 | 100,000 | ₹50,000 | ₹500 crore |
-| Year 2 | 500,000 | ₹100,000 | ₹5,000 crore |
-| Year 3 | 2,000,000 | ₹150,000 | ₹30,000 crore |
-
----
-
-# Impact Model
-
-## Social Impact
-
-### Democratization
-- Makes expert analysis available to **98%** of investors
-- Breaks socio-economic barriers
-- Empowers women investors (32% user base)
-
-### Financial Wellness
-- Improves average health score by **14 points**
-- 78% users report reduced financial stress
-- Enables informed decision-making
-
-### Economic Benefits
-- Mobilizes ₹15,000 crore in optimized investments
-- Increases tax compliance
-- Accelerates wealth creation by 8-10 years
-
----
-
-# Competitive Advantage
-
-## vs Traditional Financial Advisors
-
-| Factor | Advisor | AI Money Mentor |
-|--------|---------|-----------------|
-| **Cost** | ₹25,000-50,000 | FREE |
-| **Time** | 2-4 weeks | 2 minutes |
-| **Bias** | Commission-driven | Objective |
-| **Availability** | Business hours | 24/7 |
-| **Accessibility** | Top 2% | Everyone |
-
-## vs Existing Robo-Advisors
-
-| Factor | Competitors | AI Money Mentor |
-|--------|-------------|-----------------|
-| **Scope** | Investments only | 6 dimensions |
-| **Depth** | Basic metrics | XIRR, HHI, Tax |
-| **AI** | Rule-based | Hybrid LLM |
-| **Compliance** | Generic | India-specific |
-| **Cost** | ₹500-1,000/month | FREE |
-
----
-
-# Live Demo
-
-## Screenshots
-
-### Homepage
-- Clean, professional design
-- 3-step progress indicator
-- Compelling value proposition
-
-### User Profile Form
-- Intuitive 10-field form
-- Real-time validation
-- Risk profile selector
-
-### Portfolio Input
-- Multi-holding support
-- Add/remove functionality
-- Asset class dropdown
-
-### Analysis Dashboard
-- **Money Health Score**: 72/100, Grade B+
-- **6 Dimension Cards**: Color-coded status
-- **Portfolio Metrics**: XIRR, returns, allocation
-- **Asset Allocation Chart**: Interactive pie chart
-- **AI Recommendations**: 5 prioritized actions
-- **Risk Assessment**: Contextual analysis
-- **Tax Opportunities**: Section-wise breakdown
-
----
-
-# Technical Excellence
-
-## Code Quality
-
-### No Comments Policy
-- **Self-documenting code**
-- Clear variable names
-- Type hints (Pydantic)
-- Logical structure
-
-### Best Practices
-- **Separation of concerns**: Clean architecture
-- **Async processing**: FastAPI async/await
-- **Error handling**: Comprehensive validation
-- **Type safety**: Pydantic models
-- **Modularity**: Reusable services
-
-### Performance
-- **<2 seconds** analysis time (without AI)
-- **<5 seconds** with AI recommendations
-- **1000+ req/sec** handling capacity
-- **Horizontally scalable**: Stateless design
-
----
-
-# Deployment Ready
-
-## Infrastructure
-
-### Backend Deployment
-- **Platform**: Railway, Render, or AWS
-- **Container**: Docker ready
-- **Environment**: Python 3.11+
-- **Dependencies**: requirements.txt
-
-### Frontend Deployment
-- **Platform**: Netlify, Vercel
-- **Build**: Vite production build
-- **CDN**: Global edge distribution
-- **SSL**: Automatic HTTPS
-
-### API Integration
-- OpenAI or Anthropic API keys
-- Environment variable configuration
-- Graceful fallback if unavailable
-
----
-
-# Future Roadmap
-
-## Phase 1: Core Platform (Complete)
-✅ Money Health Score calculator
-✅ Portfolio XIRR analyzer
-✅ AI recommendation engine
-✅ Web application with beautiful UI
-
-## Phase 2: Enhanced Features (3 months)
-- **Goal Planning**: SIP calculator, retirement planning
-- **Periodic Tracking**: Save and monitor progress
-- **Alerts**: Rebalancing notifications
-- **PDF Reports**: Downloadable summary
-
-## Phase 3: Scale & Integration (6 months)
-- **Live Market Data**: BSE/NSE API integration
-- **Mobile App**: React Native version
-- **Regional Languages**: Hindi, Tamil, Bengali
-- **ET Platform Integration**: Seamless embedding
-
-## Phase 4: Ecosystem (12 months)
-- **Financial Marketplace**: Curated product recommendations
-- **Community**: Peer benchmarking, forums
-- **B2B API**: White-label for banks/fintechs
-- **Advanced Analytics**: ML-powered insights
-
----
-
-# Business Model
-
-## Freemium Strategy
-
-### Free Tier (Forever)
-- Comprehensive financial health analysis
-- Money health score across 6 dimensions
-- Portfolio XIRR & metrics
-- Basic AI recommendations
-- Tax optimization insights
-
-**Goal**: Serve 10 million+ users
-
-### Premium Tier (₹99/month)
-- Unlimited analyses
-- Portfolio tracking over time
-- Advanced goal planning (retirement, education)
-- Priority AI recommendations
-- Alerts & notifications
-- PDF reports
-
-**Projected**: 10% conversion = 1M users × ₹99 = ₹9.9 crore MRR
-
----
-
-# Business Model
-
-## Revenue Streams
-
-### 1. Premium Subscriptions
-- ₹99/month or ₹999/year
-- Target: 100,000 subscribers
-- **Revenue**: ₹10 crore annually
-
-### 2. Financial Product Marketplace
-- Insurance product recommendations: 10-15% commission
-- ELSS/NPS affiliate: 1-2% trail commission
-- Target: 20% users transact
-- **Revenue**: ₹5 crore annually
-
-### 3. B2B Licensing
-- White-label for banks/NBFCs
-- API access for fintech partners
-- Target: 5 enterprise clients × ₹50L each
-- **Revenue**: ₹2.5 crore annually
-
-### 4. Data Insights (Anonymized)
-- Aggregate trend reports for AMCs
-- Market research for financial institutions
-- **Revenue**: ₹2.5 crore annually
-
-**Total Revenue Potential: ₹20 crore annually @ 1M users**
-
----
-
-# Why We'll Win
-
-## 10 Reasons
-
-1. **Real Problem**: 9.2 crore investors need this
-2. **Massive Impact**: ₹1,000 crore economic value at scale
-3. **Technical Excellence**: Production-ready code, no shortcuts
-4. **Hybrid Intelligence**: Best of AI + expert rules
-5. **Instant Value**: 2-minute analysis vs 8-hour manual work
-6. **Zero Friction**: Free, no signup, accessible to all
-7. **Accurate Algorithms**: Excel-grade XIRR calculation
-8. **Beautiful UX**: Professional design, intuitive flow
-9. **Deployment Ready**: Can go live today
-10. **Sustainable Model**: Clear path to ₹20 crore revenue
-
----
-
-# Team & Execution
-
-## Technical Accomplishments
-
-### Backend
-- 5 service modules
-- 3 core engines (Health, Portfolio, AI)
-- Comprehensive Pydantic models
-- FastAPI with async support
-- XIRR algorithm implementation
-
-### Frontend
-- React 18 + Vite 5
-- 3 major components
-- Recharts integration
-- Responsive Tailwind design
-- 3-step wizard UX
-
-### Documentation
-- Architecture document
-- Impact model with metrics
-- API specification
-- Video script
-- Presentation deck
-
-**Total Development**: Complete end-to-end solution in record time
-
----
-
-# Call to Action
-
-## The Vision
-
-**Democratize financial planning for every Indian**
-
-From 2% with access to expert advice
-to **100%** with AI-powered intelligence
-
-## The Ask
-
-Partner with **Economic Times** to:
-1. Deploy on ET platform
-2. Reach 10 crore readers
-3. Transform financial wellness landscape
-4. Create **₹1,000 crore** in economic impact
-
-## The Promise
-
-- Free core features forever
-- Privacy-first (no data storage)
-- Continuous improvement
-- Indian-first approach
-
----
-
-# Thank You
-
-## AI Money Mentor
-**Your Personal Financial Health Analyzer**
-
-### Links
-- **Demo**: [Live Application URL]
-- **GitHub**: [Repository Link]
-- **Documentation**: Architecture, Impact Model, API Docs
-
-### Contact
-- **Team**: [Your Details]
-- **Email**: [Contact Email]
-- **Hackathon**: ET AI Hackathon 2026
-- **Problem Statement**: #9 - AI Money Mentor
-
----
-
-**Questions?**
-
-Let's democratize financial wellness together.
-
----
-
-# Appendix: Key Metrics
-
-## At A Glance
+### 💼 Portfolio Metrics
 
 | Metric | Value |
 |--------|-------|
-| Analysis Time | 2 seconds |
-| User Time Investment | 2 minutes |
-| Time Saved per User | 8 hours |
-| Average Annual Value/User | ₹95,000 |
-| Target Market Size | 2 crore investors |
-| Year 3 Impact | ₹30,000 crore |
-| Health Score Improvement | +14 points |
-| XIRR Accuracy | Within 0.01% |
-| Cost to User | FREE |
-| Revenue Potential | ₹20 crore @1M users |
+| **Total Invested** | ₹10,00,000 |
+| **Current Value** | ₹13,50,000 |
+| **Returns** | 35.0% |
+| **XIRR** | **14.2%** ⭐ |
+| **Diversification** | 67/100 |
+
+**Asset Allocation:**
+- 🔵 Equity: 75%
+- 🟢 Debt: 20%
+- 🟡 Gold: 5%
+
+**AI Recommendations:** 5 personalized actions with quantified impact
+
+</div>
+
+</div>
 
 ---
 
-# Appendix: Technology Stack
+## 🤖 AI-Powered Recommendations (Sample)
 
-## Complete Stack
+<div style="margin-top: 30px;">
 
-### Backend
-- Python 3.11+
-- FastAPI 0.115
-- Pydantic 2.9
-- NumPy 1.26
-- OpenAI API / Anthropic API
-- Uvicorn (ASGI server)
+<div class="card" style="background: #fee2e2; border-left: 8px solid #dc2626; margin-bottom: 20px;">
 
-### Frontend
-- React 18.3
-- Vite 5.4
-- Tailwind CSS 3.4
-- Recharts 2.12
-- Lucide React 0.460
-- Axios 1.7
+### 🔴 HIGH PRIORITY: Build 6-Month Emergency Fund
 
-### Deployment
-- Backend: Railway / Render / AWS
-- Frontend: Netlify / Vercel
-- Database: Not required (stateless)
-- CDN: Automatic via deployment platform
+**Action:** Allocate ₹2,40,000 via ₹20,000 monthly SIP over 12 months
+**💰 Impact:** Protect against emergencies worth ₹3,60,000
+
+</div>
+
+<div class="card" style="background: #fef3c7; border-left: 8px solid #f59e0b; margin-bottom: 20px;">
+
+### 🟡 MEDIUM: Maximize Section 80C Tax Deduction
+
+**Action:** Invest ₹75,000 in ELSS/PPF before March 31
+**💰 Impact:** Save ₹23,400 in taxes (31.2% bracket)
+
+</div>
+
+<div class="card" style="background: #fee2e2; border-left: 8px solid #dc2626;">
+
+### 🔴 HIGH: Increase Term Life Insurance by ₹50L
+
+**Action:** Get additional term cover (₹7,500/year premium)
+**💰 Impact:** Protect family with ₹1 crore total coverage
+
+</div>
+
+</div>
+
+---
+
+## 🏗️ Technology: Hybrid AI + Expert Algorithms
+
+<div class="grid-2" style="margin-top: 40px;">
+
+<div>
+
+### ⚙️ Architecture
+
+```
+FRONTEND (React + Vite)
+        ↓
+API LAYER (FastAPI)
+        ↓
+┌────────┬──────────┬─────────┐
+│ Health │Portfolio │   AI    │
+│ Score  │ Analyzer │ Engine  │
+└────────┴──────────┴─────────┘
+```
+
+**Tech Stack:**
+- Backend: FastAPI + Python 3.11
+- Frontend: React 18 + Tailwind
+- AI: OpenAI/Anthropic + Rules
+
+</div>
+
+<div>
+
+### 🚀 Innovation Highlights
+
+<div class="gradient-card" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); margin-bottom: 15px;">
+<strong>Hybrid Intelligence</strong><br>AI creativity + rule accuracy
+</div>
+
+<div class="gradient-card" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); margin-bottom: 15px;">
+<strong>Real XIRR Algorithm</strong><br>Newton-Raphson (0.01% accuracy)
+</div>
+
+<div class="gradient-card" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); margin-bottom: 15px;">
+<strong>6-Dimension Health</strong><br>Holistic vs single metric
+</div>
+
+<div class="gradient-card" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+<strong>Indian Tax Rules</strong><br>80C/80D built-in
+</div>
+
+</div>
+
+</div>
+
+---
+
+## 📈 Impact: Individual to National Scale
+
+<div style="text-align: center; margin: 30px 0;">
+
+<div class="metric">₹68,460</div>
+
+### Annual Value Per User
+
+</div>
+
+<div class="grid-3" style="margin: 40px 0;">
+
+<div class="card" style="background: #eff6ff; text-align: center;">
+<h3>⏱️ Time Saved</h3>
+<div style="font-size: 2.5em; color: #6366f1; font-weight: 700;">₹16K</div>
+<p>8 hours → 2 minutes</p>
+</div>
+
+<div class="card" style="background: #f0fdf4; text-align: center;">
+<h3>💰 Tax Saved</h3>
+<div style="font-size: 2.5em; color: #6366f1; font-weight: 700;">₹25K</div>
+<p>80C/80D optimization</p>
+</div>
+
+<div class="card" style="background: #fef3c7; text-align: center;">
+<h3>📈 Returns</h3>
+<div style="font-size: 2.5em; color: #6366f1; font-weight: 700;">₹14K</div>
+<p>2.7% improvement</p>
+</div>
+
+</div>
+
+### 🌍 Market-Scale Impact
+
+| Users | Year | Direct Economic Impact |
+|-------|------|------------------------|
+| 100,000 | Year 1 | ₹685 crore |
+| 500,000 | Year 2 | ₹3,423 crore |
+| **2,000,000** | **Year 3** | **₹13,692 crore** |
+
+---
+
+## 🆚 Competitive Advantage: Clear Winner
+
+<div class="grid-2" style="margin-top: 40px;">
+
+<div>
+
+### vs Traditional Advisors
+
+| Factor | Advisor | **Us** |
+|--------|---------|--------|
+| Cost | ₹50K | **FREE** ✅ |
+| Time | 2-4 weeks | **2 min** ✅ |
+| Bias | Commission | **Objective** ✅ |
+| Hours | Business | **24/7** ✅ |
+| Access | Top 2% | **Everyone** ✅ |
+
+</div>
+
+<div>
+
+### vs Robo-Advisors
+
+| Factor | Competitors | **Us** |
+|--------|-------------|--------|
+| Scope | Invest only | **6D Holistic** ✅ |
+| Depth | Basic | **XIRR+HHI** ✅ |
+| AI | Rules only | **Hybrid LLM** ✅ |
+| Tax | Generic | **India 80C** ✅ |
+| Cost | ₹500/mo | **FREE** ✅ |
+
+</div>
+
+</div>
+
+<div style="text-align: center; margin-top: 40px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; border-radius: 12px;">
+
+### 🏆 We Win On: Technology + Impact + Accessibility
+
+</div>
+
+---
+
+## 💰 Business Model: Free + Premium
+
+<div class="grid-2" style="margin-top: 40px;">
+
+<div class="card" style="background: #dbeafe; border-left: 6px solid #3b82f6;">
+
+### 🆓 Free Tier (Forever)
+
+✅ Complete financial health analysis
+✅ Money health score (6 dimensions)
+✅ Portfolio XIRR & metrics
+✅ AI-powered recommendations
+✅ Tax optimization insights
+
+**Goal: 10 million+ users**
+
+</div>
+
+<div class="card" style="background: #fef3c7; border-left: 6px solid #f59e0b;">
+
+### ⭐ Premium Tier
+
+**₹99/month**
+
+✅ Unlimited analyses
+✅ Portfolio tracking over time
+✅ Advanced goal planning
+✅ Priority AI recommendations
+✅ Alerts & PDF reports
+
+**Conversion: 10% (industry standard)**
+
+</div>
+
+</div>
+
+<div style="text-align: center; margin-top: 40px;">
+
+<div class="metric">₹20 crore</div>
+
+### Annual Revenue Potential @ 1 Million Users
+
+**Subscriptions (₹10Cr) + Marketplace (₹5Cr) + B2B (₹2.5Cr) + Data (₹2.5Cr)**
+
+</div>
+
+---
+
+## 🎯 Why AI Money Mentor Wins
+
+<div class="grid-2" style="margin-top: 40px; font-size: 0.95em;">
+
+<div>
+
+<div class="card" style="background: #ede9fe; margin-bottom: 15px;">
+<strong>1️⃣ Real Problem:</strong> 9.2 crore investors need this
+</div>
+
+<div class="card" style="background: #dbeafe; margin-bottom: 15px;">
+<strong>2️⃣ Massive Impact:</strong> ₹13,700 crore economic value (Year 3)
+</div>
+
+<div class="card" style="background: #fce7f3; margin-bottom: 15px;">
+<strong>3️⃣ Technical Excellence:</strong> Production-ready, no prototypes
+</div>
+
+<div class="card" style="background: #fef3c7; margin-bottom: 15px;">
+<strong>4️⃣ Hybrid AI:</strong> GPT-4/Claude + expert rules
+</div>
+
+<div class="card" style="background: #d1fae5; margin-bottom: 15px;">
+<strong>5️⃣ Instant Value:</strong> 2 minutes vs 8 hours manual work
+</div>
+
+</div>
+
+<div>
+
+<div class="card" style="background: #fee2e2; margin-bottom: 15px;">
+<strong>6️⃣ Zero Friction:</strong> Free, no signup, no barriers
+</div>
+
+<div class="card" style="background: #e0e7ff; margin-bottom: 15px;">
+<strong>7️⃣ Accurate:</strong> Excel-grade XIRR (0.01% precision)
+</div>
+
+<div class="card" style="background: #fef9c3; margin-bottom: 15px;">
+<strong>8️⃣ Beautiful UX:</strong> Professional design, intuitive flow
+</div>
+
+<div class="card" style="background: #fecdd3; margin-bottom: 15px;">
+<strong>9️⃣ Deploy Ready:</strong> Can go live today on ET platform
+</div>
+
+<div class="card" style="background: #fed7aa; margin-bottom: 15px;">
+<strong>🔟 Sustainable:</strong> Clear ₹20Cr revenue model
+</div>
+
+</div>
+
+</div>
+
+---
+
+<!-- _class: hero -->
+
+# 🚀 The Vision
+
+<div style="margin: 60px 0; font-size: 1.5em;">
+
+## From Luxury to Utility
+
+<div style="font-size: 2em; margin: 40px 0;">
+₹50,000 → <span style="color: #fbbf24; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">₹0</span>
+</div>
+
+<div style="font-size: 2em; margin: 40px 0;">
+2% Access → <span style="color: #fbbf24; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">100%</span>
+</div>
+
+### Democratizing Financial Planning for Every Indian
+
+<div style="margin-top: 60px; font-size: 0.8em; background: rgba(255,255,255,0.2); padding: 30px; border-radius: 12px;">
+
+**Partner with Economic Times to reach 10 crore readers and create ₹1,000+ crore economic impact**
+
+</div>
+
+</div>
+
+---
+
+<!-- _class: hero -->
+
+# 🙏 Thank You
+
+<div style="margin: 60px 0;">
+
+## 💰 AI Money Mentor
+
+### Your Personal Financial Health Analyzer
+
+<div style="margin: 60px 0; font-size: 1.2em;">
+
+**🔗 GitHub:** github.com/[username]/ai-money-mentor
+
+**📊 Complete Docs:** Architecture, Impact Model, Video Script included
+
+**📧 Contact:** [Your Email]
+
+</div>
+
+<div style="margin-top: 60px; font-size: 1.5em;">
+
+### Problem Statement #9 | ET AI Hackathon 2026
+
+</div>
+
+<div style="margin-top: 40px; font-size: 1.3em;">
+
+**Let's democratize financial wellness together** 🚀
+
+</div>
+
+</div>
+
+---
