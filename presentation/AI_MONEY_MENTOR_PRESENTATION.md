@@ -578,11 +578,11 @@ API LAYER (FastAPI)
 
 <div style="margin: 60px 0; font-size: 1.2em;">
 
-**🔗 GitHub:** github.com/[username]/ai-money-mentor
+**🔗 GitHub:** github.com/SurajSingh9696/ETHackathon
 
 **📊 Complete Docs:** Architecture, Impact Model, Video Script included
 
-**📧 Contact:** [Your Email]
+**📧 Contact:** sbb9298@gmail.com
 
 </div>
 
