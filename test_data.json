@@ -1,0 +1,33 @@
+{
+  "user_profile": {
+    "age": 30,
+    "monthly_income": 100000,
+    "monthly_expenses": 60000,
+    "total_savings": 500000,
+    "total_debt": 200000,
+    "emergency_fund": 200000,
+    "life_insurance_cover": 5000000,
+    "health_insurance_cover": 500000,
+    "dependents": 2,
+    "risk_profile": "moderate",
+    "has_home": false
+  },
+  "holdings": [
+    {
+      "scheme_name": "HDFC Equity Fund",
+      "units": 100,
+      "current_value": 150000,
+      "invested_amount": 100000,
+      "asset_class": "equity",
+      "purchase_date": "2023-01-15"
+    },
+    {
+      "scheme_name": "ICICI Prudential Debt Fund",
+      "units": 500,
+      "current_value": 55000,
+      "invested_amount": 50000,
+      "asset_class": "debt",
+      "purchase_date": "2023-06-01"
+    }
+  ]
+}
