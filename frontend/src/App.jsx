@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Wallet, TrendingUp, Shield, Target, AlertCircle, CheckCircle, ArrowRight, Sparkles, Zap } from 'lucide-react';
+import { Wallet, AlertCircle, CheckCircle, Sparkles, Zap } from 'lucide-react';
 import UserProfileForm from './components/UserProfileForm';
 import PortfolioForm from './components/PortfolioForm';
 import AnalysisResults from './components/AnalysisResults';
@@ -97,10 +97,10 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen py-8 px-4 relative">
+    <div className="min-h-screen py-8 px-4 relative app-shell">
       {error && (
         <div className="fixed top-4 right-4 z-50 animate-slide-in">
-          <div className="bg-red-500 text-white px-6 py-4 rounded-lg shadow-2xl flex items-center space-x-3 max-w-md">
+          <div className="bg-red-600 text-white px-6 py-4 rounded-xl shadow-2xl flex items-center space-x-3 max-w-md border border-red-400/20">
             <AlertCircle className="w-6 h-6 flex-shrink-0" />
             <p className="font-medium">{error}</p>
           </div>
@@ -109,22 +109,22 @@ function App() {
 
       {loading && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 flex items-center justify-center">
-          <div className="bg-white rounded-2xl p-8 max-w-md w-full mx-4 shadow-2xl">
+          <div className="bg-white rounded-2xl p-8 max-w-md w-full mx-4 shadow-2xl border border-slate-200">
             <div className="text-center">
               <div className="relative w-20 h-20 mx-auto mb-4">
-                <div className="absolute inset-0 rounded-full border-4 border-purple-200"></div>
-                <div className="absolute inset-0 rounded-full border-4 border-purple-600 border-t-transparent animate-spin"></div>
-                <Sparkles className="absolute inset-0 m-auto w-8 h-8 text-purple-600 animate-pulse" />
+                <div className="absolute inset-0 rounded-full border-4 border-sky-100"></div>
+                <div className="absolute inset-0 rounded-full border-4 border-sky-600 border-t-transparent animate-spin"></div>
+                <Sparkles className="absolute inset-0 m-auto w-8 h-8 text-sky-600 animate-pulse" />
               </div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-2">Analyzing Your Finances</h3>
-              <p className="text-gray-600 mb-4">Our AI is crunching the numbers...</p>
+              <h3 className="text-2xl font-bold text-slate-900 mb-2" style={{ fontFamily: 'var(--font-display)' }}>Analyzing Your Finances</h3>
+              <p className="text-slate-600 mb-4">Our AI is crunching the numbers...</p>
               <div className="w-full bg-gray-200 rounded-full h-3 mb-2 overflow-hidden">
                 <div
-                  className="bg-gradient-to-r from-purple-600 to-indigo-600 h-3 rounded-full transition-all duration-300 ease-out"
+                  className="bg-gradient-to-r from-sky-600 to-cyan-500 h-3 rounded-full transition-all duration-300 ease-out"
                   style={{ width: `${analysisProgress}%` }}
                 ></div>
               </div>
-              <p className="text-sm text-gray-500">{analysisProgress}% Complete</p>
+              <p className="text-sm text-slate-500">{analysisProgress}% Complete</p>
             </div>
           </div>
         </div>
@@ -132,48 +132,58 @@ function App() {
 
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12 animate-fade-in">
-          <div className="flex items-center justify-center mb-4">
-            <div className="bg-white/10 backdrop-blur-sm p-3 rounded-2xl mr-4">
-              <Wallet className="w-12 h-12 text-white animate-float" />
-            </div>
-            <h1 className="text-5xl font-bold text-white drop-shadow-lg">AI Money Mentor</h1>
-            <Zap className="w-8 h-8 text-yellow-300 ml-3 animate-pulse" />
+          <div className="inline-flex items-center justify-center mb-6 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white/90 text-xs tracking-[0.2em] uppercase font-semibold">
+            Intelligent Wealth Planning
           </div>
-          <p className="text-xl text-white/90 mb-4">
-            Your Personal Financial Health Analyzer powered by AI
+          <div className="flex items-center justify-center mb-6">
+            <div className="bg-white/15 glass-effect p-4 rounded-2xl mr-4 animate-float">
+              <Wallet className="w-14 h-14 text-white drop-shadow-lg" />
+            </div>
+            <h1 className="text-5xl sm:text-6xl font-bold text-white drop-shadow-lg tracking-tight" style={{ fontFamily: 'var(--font-display)' }}>
+              AI Money Mentor
+            </h1>
+            <Zap className="w-10 h-10 text-amber-300 ml-3 animate-pulse" />
+          </div>
+          <p className="text-lg sm:text-xl text-white/95 mb-2 font-light">
+            Your Personal Financial Health Analyzer
           </p>
-          <div className="flex items-center justify-center space-x-4 text-white/80 text-sm">
-            <div className="flex items-center">
-              <CheckCircle className="w-4 h-4 mr-1 text-green-300" />
-              <span>2-Minute Analysis</span>
+          <p className="text-sm text-white/80 mb-6">
+            Powered by advanced AI for comprehensive wealth insights
+          </p>
+          <div className="flex items-center justify-center flex-wrap gap-4 sm:gap-6 text-white/90 text-sm">
+            <div className="flex items-center space-x-1.5">
+              <CheckCircle className="w-4 h-4 text-teal-300" />
+              <span className="font-medium">2-Minute Analysis</span>
             </div>
-            <div className="flex items-center">
-              <CheckCircle className="w-4 h-4 mr-1 text-green-300" />
-              <span>100% Free</span>
+            <div className="w-1 h-1 bg-white/40 rounded-full"></div>
+            <div className="flex items-center space-x-1.5">
+              <CheckCircle className="w-4 h-4 text-teal-300" />
+              <span className="font-medium">100% Free</span>
             </div>
-            <div className="flex items-center">
-              <CheckCircle className="w-4 h-4 mr-1 text-green-300" />
-              <span>No Signup</span>
+            <div className="w-1 h-1 bg-white/40 rounded-full"></div>
+            <div className="flex items-center space-x-1.5">
+              <CheckCircle className="w-4 h-4 text-teal-300" />
+              <span className="font-medium">No Signup</span>
             </div>
           </div>
         </div>
 
-        <div className="flex justify-center mb-8">
-          <div className="flex items-center space-x-4">
+        <div className="flex justify-center mb-12">
+          <div className="flex items-center space-x-2">
             <StepIndicator
               number={1}
               title="Profile"
               active={step === 1}
               completed={step > 1}
             />
-            <ArrowRight className={`text-white/50 transition-all ${step > 1 ? 'animate-pulse-slow' : ''}`} />
+            <div className={`w-12 h-1 rounded-full transition-all duration-500 ${step > 1 ? 'bg-gradient-to-r from-teal-400 to-cyan-400' : 'bg-white/30'}`}></div>
             <StepIndicator
               number={2}
               title="Portfolio"
               active={step === 2}
               completed={step > 2}
             />
-            <ArrowRight className={`text-white/50 transition-all ${step > 2 ? 'animate-pulse-slow' : ''}`} />
+            <div className={`w-12 h-1 rounded-full transition-all duration-500 ${step > 2 ? 'bg-gradient-to-r from-teal-400 to-cyan-400' : 'bg-white/30'}`}></div>
             <StepIndicator
               number={3}
               title="Analysis"
@@ -191,7 +201,7 @@ function App() {
                 onClick={loadDemoData}
                 className="text-white/80 hover:text-white underline decoration-dotted flex items-center justify-center mx-auto transition-all"
               >
-                <Sparkles className="w-4 h-4 mr-2" />
+                <Sparkles className="w-4 h-4 mr-2 text-amber-200" />
                 Try with Demo Data
               </button>
             </div>
@@ -214,16 +224,16 @@ function App() {
 
 function StepIndicator({ number, title, active, completed }) {
   return (
-    <div className="flex items-center transition-all duration-300">
+    <div className="flex items-center transition-all duration-300 flex-col">
       <div className={`w-12 h-12 rounded-full flex items-center justify-center font-bold transition-all duration-300 ${
-        completed ? 'bg-green-500 text-white shadow-lg shadow-green-500/50 scale-110' :
-        active ? 'bg-white text-purple-700 shadow-lg shadow-white/50 scale-110 animate-pulse-slow' :
-        'bg-white/30 text-white scale-100'
+        completed ? 'bg-teal-400 shadow-lg shadow-teal-400/40 scale-110 animate-scale-in text-slate-900' :
+        active ? 'bg-white text-slate-800 shadow-lg shadow-white/70 scale-110 animate-pulse-slow' :
+        'bg-white/25 text-white scale-95'
       }`}>
         {completed ? <CheckCircle className="w-6 h-6" /> : number}
       </div>
-      <span className={`ml-2 font-medium transition-all ${
-        active ? 'text-white font-bold' : 'text-white/70'
+      <span className={`mt-2 font-semibold text-xs transition-all text-center ${
+        active ? 'text-white font-bold' : completed ? 'text-teal-300' : 'text-white/70'
       }`}>
         {title}
       </span>

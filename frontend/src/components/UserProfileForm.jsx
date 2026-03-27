@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { User, DollarSign, CreditCard, Shield } from 'lucide-react';
+import { User } from 'lucide-react';
 
 export default function UserProfileForm({ onSubmit }) {
   const [formData, setFormData] = useState({
@@ -30,16 +30,23 @@ export default function UserProfileForm({ onSubmit }) {
   };
 
   return (
-    <div className="bg-white rounded-2xl shadow-2xl p-8">
-      <div className="flex items-center mb-6">
-        <User className="w-8 h-8 text-purple-600 mr-3" />
-        <h2 className="text-3xl font-bold text-gray-800">Your Financial Profile</h2>
+    <div className="bg-white/95 rounded-3xl shadow-2xl-purple p-8 sm:p-10 border border-slate-200/80 backdrop-blur-xl">
+      <div className="flex items-center mb-8">
+        <div className="bg-gradient-to-br from-teal-100 to-sky-100 p-3 rounded-xl mr-4 border border-teal-200/70">
+          <User className="w-8 h-8 text-teal-700" />
+        </div>
+        <div>
+          <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent" style={{ fontFamily: 'var(--font-display)' }}>
+            Your Financial Profile
+          </h2>
+          <p className="text-slate-500 text-sm mt-1">Enter your financial information for personalized analysis</p>
+        </div>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form onSubmit={handleSubmit} className="space-y-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-2">
+            <label className="block text-sm font-bold text-gray-700 mb-3">
               Age
             </label>
             <input
@@ -49,13 +56,13 @@ export default function UserProfileForm({ onSubmit }) {
               onChange={handleChange}
               min="18"
               max="100"
-              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none"
+              className="w-full px-5 py-3 border-2 border-slate-200 rounded-xl focus:border-sky-600 transition-smooth bg-slate-50/70 text-slate-800"
               required
             />
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-2">
+            <label className="block text-sm font-bold text-gray-700 mb-3">
               Monthly Income (₹)
             </label>
             <input
@@ -64,13 +71,13 @@ export default function UserProfileForm({ onSubmit }) {
               value={formData.monthly_income}
               onChange={handleChange}
               min="0"
-              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none"
+              className="w-full px-5 py-3 border-2 border-slate-200 rounded-xl focus:border-sky-600 transition-smooth bg-slate-50/70 text-slate-800"
               required
             />
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-2">
+            <label className="block text-sm font-bold text-gray-700 mb-3">
               Monthly Expenses (₹)
             </label>
             <input
@@ -79,13 +86,13 @@ export default function UserProfileForm({ onSubmit }) {
               value={formData.monthly_expenses}
               onChange={handleChange}
               min="0"
-              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none"
+              className="w-full px-5 py-3 border-2 border-slate-200 rounded-xl focus:border-sky-600 transition-smooth bg-slate-50/70 text-slate-800"
               required
             />
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-2">
+            <label className="block text-sm font-bold text-gray-700 mb-3">
               Total Savings/Investments (₹)
             </label>
             <input
@@ -94,13 +101,13 @@ export default function UserProfileForm({ onSubmit }) {
               value={formData.total_savings}
               onChange={handleChange}
               min="0"
-              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none"
+              className="w-full px-5 py-3 border-2 border-slate-200 rounded-xl focus:border-sky-600 transition-smooth bg-slate-50/70 text-slate-800"
               required
             />
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-2">
+            <label className="block text-sm font-bold text-gray-700 mb-3">
               Total Debt (₹)
             </label>
             <input
@@ -109,13 +116,13 @@ export default function UserProfileForm({ onSubmit }) {
               value={formData.total_debt}
               onChange={handleChange}
               min="0"
-              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none"
+              className="w-full px-5 py-3 border-2 border-slate-200 rounded-xl focus:border-sky-600 transition-smooth bg-slate-50/70 text-slate-800"
               required
             />
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-2">
+            <label className="block text-sm font-bold text-gray-700 mb-3">
               Emergency Fund (₹)
             </label>
             <input
@@ -124,13 +131,13 @@ export default function UserProfileForm({ onSubmit }) {
               value={formData.emergency_fund}
               onChange={handleChange}
               min="0"
-              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none"
+              className="w-full px-5 py-3 border-2 border-slate-200 rounded-xl focus:border-sky-600 transition-smooth bg-slate-50/70 text-slate-800"
               required
             />
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-2">
+            <label className="block text-sm font-bold text-gray-700 mb-3">
               Life Insurance Cover (₹)
             </label>
             <input
@@ -139,13 +146,13 @@ export default function UserProfileForm({ onSubmit }) {
               value={formData.life_insurance_cover}
               onChange={handleChange}
               min="0"
-              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none"
+              className="w-full px-5 py-3 border-2 border-slate-200 rounded-xl focus:border-sky-600 transition-smooth bg-slate-50/70 text-slate-800"
               required
             />
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-2">
+            <label className="block text-sm font-bold text-gray-700 mb-3">
               Health Insurance Cover (₹)
             </label>
             <input
@@ -154,13 +161,13 @@ export default function UserProfileForm({ onSubmit }) {
               value={formData.health_insurance_cover}
               onChange={handleChange}
               min="0"
-              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none"
+              className="w-full px-5 py-3 border-2 border-slate-200 rounded-xl focus:border-sky-600 transition-smooth bg-slate-50/70 text-slate-800"
               required
             />
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-2">
+            <label className="block text-sm font-bold text-gray-700 mb-3">
               Number of Dependents
             </label>
             <input
@@ -169,20 +176,20 @@ export default function UserProfileForm({ onSubmit }) {
               value={formData.dependents}
               onChange={handleChange}
               min="0"
-              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none"
+              className="w-full px-5 py-3 border-2 border-slate-200 rounded-xl focus:border-sky-600 transition-smooth bg-slate-50/70 text-slate-800"
               required
             />
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-gray-700 mb-2">
+            <label className="block text-sm font-bold text-gray-700 mb-3">
               Risk Profile
             </label>
             <select
               name="risk_profile"
               value={formData.risk_profile}
               onChange={handleChange}
-              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-purple-500 focus:outline-none"
+              className="w-full px-5 py-3 border-2 border-slate-200 rounded-xl focus:border-sky-600 transition-smooth bg-slate-50/70 text-slate-800"
               required
             >
               <option value="conservative">Conservative</option>
@@ -192,22 +199,22 @@ export default function UserProfileForm({ onSubmit }) {
           </div>
         </div>
 
-        <div className="flex items-center">
+        <div className="bg-gradient-to-r from-teal-50 to-sky-50 p-5 rounded-2xl border-2 border-teal-200 flex items-center space-x-4">
           <input
             type="checkbox"
             name="has_home"
             checked={formData.has_home}
             onChange={handleChange}
-            className="w-5 h-5 text-purple-600 rounded focus:ring-purple-500"
+            className="w-6 h-6 text-teal-700 rounded-lg cursor-pointer"
           />
-          <label className="ml-3 text-sm font-medium text-gray-700">
+          <label className="text-base font-medium text-gray-700 cursor-pointer flex-1">
             I own a home
           </label>
         </div>
 
         <button
           type="submit"
-          className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-4 rounded-lg font-bold text-lg hover:from-purple-700 hover:to-indigo-700 transition-all transform hover:scale-105"
+          className="w-full bg-gradient-to-r from-teal-600 to-sky-600 text-white py-5 rounded-xl font-bold text-lg hover:from-teal-700 hover:to-sky-700 transition-all transform hover:scale-[1.01] shadow-lg shadow-sky-900/20 active:scale-[0.99]"
         >
           Continue to Portfolio →
         </button>

@@ -1,27 +1,27 @@
 import React from 'react';
 import { Award, TrendingUp, AlertTriangle, Check, RefreshCw, PieChart } from 'lucide-react';
-import { RadialBarChart, RadialBar, Legend, ResponsiveContainer, PieChart as RPieChart, Pie, Cell } from 'recharts';
+import { ResponsiveContainer, PieChart as RPieChart, Pie, Cell } from 'recharts';
 
 export default function AnalysisResults({ results, onReset }) {
   const { health_score, portfolio_metrics, ai_recommendations, risk_assessment, tax_saving_opportunities } = results;
 
   const getScoreColor = (score) => {
-    if (score >= 75) return 'text-green-600';
-    if (score >= 50) return 'text-yellow-600';
+    if (score >= 75) return 'text-emerald-600';
+    if (score >= 50) return 'text-amber-600';
     return 'text-red-600';
   };
 
   const getScoreBg = (score) => {
-    if (score >= 75) return 'bg-green-100';
-    if (score >= 50) return 'bg-yellow-100';
-    return 'bg-red-100';
+    if (score >= 75) return 'bg-emerald-100 text-emerald-700';
+    if (score >= 50) return 'bg-amber-100 text-amber-700';
+    return 'bg-red-100 text-red-700';
   };
 
   const getPriorityColor = (priority) => {
     switch(priority) {
-      case 'high': return 'bg-red-100 text-red-700';
-      case 'medium': return 'bg-yellow-100 text-yellow-700';
-      default: return 'bg-blue-100 text-blue-700';
+      case 'high': return 'bg-gradient-to-r from-red-500 to-orange-500 text-white';
+      case 'medium': return 'bg-gradient-to-r from-amber-500 to-yellow-500 text-white';
+      default: return 'bg-gradient-to-r from-sky-600 to-cyan-600 text-white';
     }
   };
 
@@ -30,39 +30,47 @@ export default function AnalysisResults({ results, onReset }) {
     value: value
   }));
 
-  const COLORS = ['#8b5cf6', '#3b82f6', '#10b981', '#f59e0b', '#ef4444'];
+  const COLORS = ['#0f766e', '#0284c7', '#06b6d4', '#f59e0b', '#ef4444'];
 
   return (
     <div className="space-y-8">
-      <div className="bg-white rounded-2xl shadow-2xl p-8">
-        <div className="flex items-center justify-center mb-8">
-          <Award className="w-12 h-12 text-purple-600 mr-4" />
-          <div className="text-center">
-            <h2 className="text-4xl font-bold text-gray-800">Money Health Score</h2>
-            <div className={`text-7xl font-bold mt-4 ${getScoreColor(health_score.overall_score)}`}>
-              {health_score.overall_score}
-              <span className="text-4xl">/100</span>
-            </div>
-            <div className={`inline-block px-6 py-2 rounded-full text-2xl font-bold mt-4 ${getScoreBg(health_score.overall_score)}`}>
-              Grade: {health_score.grade}
-            </div>
+      <div className="bg-white/95 rounded-3xl shadow-2xl-purple p-8 sm:p-10 border border-slate-200/80 backdrop-blur-xl overflow-hidden">
+        <div className="flex items-center justify-center mb-10">
+          <div className="bg-gradient-to-br from-amber-100 to-orange-100 p-4 rounded-2xl mr-4 border border-amber-200/70">
+            <Award className="w-12 h-12 text-amber-700" />
+          </div>
+          <div className="text-center flex-1">
+            <h2 className="text-3xl sm:text-4xl font-bold text-slate-900" style={{ fontFamily: 'var(--font-display)' }}>
+              Money Health Score
+            </h2>
+            <p className="text-slate-500 text-sm mt-2">Your comprehensive financial wellness assessment</p>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+        <div className="text-center mb-10">
+          <div className={`text-7xl sm:text-8xl font-bold mb-2 ${getScoreColor(health_score.overall_score)}`} style={{ fontFamily: 'var(--font-display)' }}>
+            {health_score.overall_score}
+            <span className="text-3xl sm:text-4xl text-slate-400">/100</span>
+          </div>
+          <div className={`inline-block px-8 py-3 rounded-full text-xl font-bold mt-4 ${getScoreBg(health_score.overall_score)} shadow-sm border border-black/5`}>
+            Grade: {health_score.grade}
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {health_score.dimensions.map((dim, idx) => (
-            <div key={idx} className="p-6 bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl border-2 border-purple-200">
-              <h3 className="font-bold text-gray-800 mb-2">{dim.dimension}</h3>
-              <div className={`text-3xl font-bold ${getScoreColor(dim.score)}`}>
+            <div key={idx} className="p-6 bg-gradient-to-br from-slate-50 to-sky-50/60 rounded-2xl border-2 border-slate-200 transition-all hover:shadow-lg hover:border-sky-300">
+              <h3 className="font-bold text-slate-800 mb-3 text-lg">{dim.dimension}</h3>
+              <div className={`text-4xl font-bold mb-3 ${getScoreColor(dim.score)}`} style={{ fontFamily: 'var(--font-display)' }}>
                 {dim.score.toFixed(0)}
               </div>
-              <div className={`inline-block px-3 py-1 rounded-full text-xs font-bold mt-2 ${getScoreBg(dim.score)}`}>
+              <div className={`inline-block px-4 py-2 rounded-full text-sm font-bold mb-4 ${getScoreBg(dim.score)}`}>
                 {dim.status}
               </div>
-              <ul className="mt-3 space-y-1">
+              <ul className="space-y-2">
                 {dim.recommendations.map((rec, i) => (
-                  <li key={i} className="text-sm text-gray-700 flex items-start">
-                    <span className="text-purple-600 mr-2">•</span>
+                  <li key={i} className="text-sm text-slate-700 flex items-start">
+                    <span className="text-teal-700 mr-2 font-bold">✓</span>
                     <span>{rec}</span>
                   </li>
                 ))}
@@ -73,50 +81,58 @@ export default function AnalysisResults({ results, onReset }) {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <div className="bg-white rounded-2xl shadow-2xl p-8">
-          <div className="flex items-center mb-6">
-            <TrendingUp className="w-8 h-8 text-purple-600 mr-3" />
-            <h2 className="text-2xl font-bold text-gray-800">Portfolio Metrics</h2>
+        <div className="bg-white/95 rounded-3xl shadow-2xl-purple p-8 border border-slate-200/80 backdrop-blur-xl">
+          <div className="flex items-center mb-8">
+            <div className="bg-gradient-to-br from-sky-100 to-cyan-100 p-3 rounded-xl mr-4 border border-sky-200/70">
+              <TrendingUp className="w-8 h-8 text-sky-700" />
+            </div>
+            <h2 className="text-2xl font-bold text-slate-800" style={{ fontFamily: 'var(--font-display)' }}>
+              Portfolio Metrics
+            </h2>
           </div>
 
-          <div className="space-y-4">
-            <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-              <span className="font-semibold text-gray-700">Total Invested</span>
-              <span className="text-xl font-bold text-gray-900">₹{portfolio_metrics.total_invested.toLocaleString()}</span>
+          <div className="space-y-3">
+            <div className="flex justify-between items-center p-4 bg-gradient-to-r from-slate-50 to-slate-100 rounded-xl border border-slate-200/70">
+              <span className="font-semibold text-slate-700">Total Invested</span>
+              <span className="text-xl font-bold text-slate-900">₹{portfolio_metrics.total_invested.toLocaleString()}</span>
             </div>
-            <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-              <span className="font-semibold text-gray-700">Current Value</span>
-              <span className="text-xl font-bold text-purple-600">₹{portfolio_metrics.current_value.toLocaleString()}</span>
+            <div className="flex justify-between items-center p-4 bg-gradient-to-r from-sky-50 to-cyan-50 rounded-xl border border-sky-200/60">
+              <span className="font-semibold text-slate-700">Current Value</span>
+              <span className="text-xl font-bold text-sky-700">₹{portfolio_metrics.current_value.toLocaleString()}</span>
             </div>
-            <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-              <span className="font-semibold text-gray-700">Absolute Returns</span>
-              <span className={`text-xl font-bold ${portfolio_metrics.absolute_returns >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+            <div className="flex justify-between items-center p-4 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl border border-emerald-200/50">
+              <span className="font-semibold text-slate-700">Absolute Returns</span>
+              <span className={`text-xl font-bold ${portfolio_metrics.absolute_returns >= 0 ? 'text-emerald-600' : 'text-red-600'}`}>
                 ₹{portfolio_metrics.absolute_returns.toLocaleString()}
               </span>
             </div>
-            <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-              <span className="font-semibold text-gray-700">Returns %</span>
-              <span className={`text-xl font-bold ${portfolio_metrics.returns_percentage >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+            <div className="flex justify-between items-center p-4 bg-gradient-to-r from-orange-50 to-yellow-50 rounded-xl border border-orange-200/50">
+              <span className="font-semibold text-slate-700">Returns %</span>
+              <span className={`text-xl font-bold ${portfolio_metrics.returns_percentage >= 0 ? 'text-emerald-600' : 'text-red-600'}`}>
                 {portfolio_metrics.returns_percentage.toFixed(2)}%
               </span>
             </div>
             {portfolio_metrics.xirr && (
-              <div className="flex justify-between items-center p-4 bg-purple-50 rounded-lg border-2 border-purple-300">
-                <span className="font-semibold text-gray-700">XIRR (Annualized)</span>
-                <span className="text-xl font-bold text-purple-600">{portfolio_metrics.xirr.toFixed(2)}%</span>
+              <div className="flex justify-between items-center p-4 bg-gradient-to-r from-teal-600 to-sky-600 rounded-xl border-2 border-sky-400/40 text-white">
+                <span className="font-semibold">XIRR (Annualized)</span>
+                <span className="text-xl font-bold">{portfolio_metrics.xirr.toFixed(2)}%</span>
               </div>
             )}
-            <div className="flex justify-between items-center p-4 bg-gray-50 rounded-lg">
-              <span className="font-semibold text-gray-700">Diversification Score</span>
-              <span className="text-xl font-bold text-gray-900">{portfolio_metrics.diversification_score.toFixed(0)}/100</span>
+            <div className="flex justify-between items-center p-4 bg-gradient-to-r from-slate-50 to-gray-50 rounded-xl border border-slate-200/50">
+              <span className="font-semibold text-slate-700">Diversification Score</span>
+              <span className="text-xl font-bold text-slate-900">{portfolio_metrics.diversification_score.toFixed(0)}/100</span>
             </div>
           </div>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-2xl p-8">
-          <div className="flex items-center mb-6">
-            <PieChart className="w-8 h-8 text-purple-600 mr-3" />
-            <h2 className="text-2xl font-bold text-gray-800">Asset Allocation</h2>
+        <div className="bg-white/95 rounded-3xl shadow-2xl-purple p-8 border border-slate-200/80 backdrop-blur-xl">
+          <div className="flex items-center mb-8">
+            <div className="bg-gradient-to-br from-emerald-100 to-teal-100 p-3 rounded-xl mr-4 border border-emerald-200/70">
+              <PieChart className="w-8 h-8 text-emerald-700" />
+            </div>
+            <h2 className="text-2xl font-bold text-slate-800" style={{ fontFamily: 'var(--font-display)' }}>
+              Asset Allocation
+            </h2>
           </div>
 
           <ResponsiveContainer width="100%" height={300}>
@@ -140,49 +156,63 @@ export default function AnalysisResults({ results, onReset }) {
         </div>
       </div>
 
-      <div className="bg-white rounded-2xl shadow-2xl p-8">
-        <div className="flex items-center mb-6">
-          <Check className="w-8 h-8 text-purple-600 mr-3" />
-          <h2 className="text-2xl font-bold text-gray-800">AI-Powered Recommendations</h2>
+      <div className="bg-white/95 rounded-3xl shadow-2xl-purple p-8 sm:p-10 border border-slate-200/80 backdrop-blur-xl">
+        <div className="flex items-center mb-8">
+          <div className="bg-gradient-to-br from-emerald-100 to-teal-100 p-3 rounded-xl mr-4 border border-emerald-200/70">
+            <Check className="w-8 h-8 text-emerald-700" />
+          </div>
+          <h2 className="text-2xl font-bold text-slate-800" style={{ fontFamily: 'var(--font-display)' }}>
+            AI-Powered Recommendations
+          </h2>
         </div>
 
         <div className="space-y-4">
           {ai_recommendations.map((rec, idx) => (
-            <div key={idx} className="p-6 bg-gradient-to-r from-purple-50 to-indigo-50 rounded-xl border-2 border-purple-200">
+            <div key={idx} className="p-6 bg-gradient-to-r from-slate-50 to-sky-50 rounded-2xl border-2 border-slate-200 hover:shadow-lg transition-all">
               <div className="flex items-start justify-between mb-3">
-                <h3 className="font-bold text-lg text-gray-800">{rec.title}</h3>
-                <span className={`px-3 py-1 rounded-full text-xs font-bold ${getPriorityColor(rec.priority)}`}>
+                <h3 className="font-bold text-lg text-slate-800">{rec.title}</h3>
+                <span className={`px-4 py-2 rounded-full text-xs font-bold text-white ${getPriorityColor(rec.priority)}`}>
                   {rec.priority.toUpperCase()}
                 </span>
               </div>
-              <p className="text-gray-700 mb-3">{rec.description}</p>
-              <div className="flex items-center text-sm text-green-700 bg-green-50 px-4 py-2 rounded-lg">
-                <TrendingUp className="w-4 h-4 mr-2" />
-                <span className="font-semibold">Impact: {rec.potential_impact}</span>
+              <p className="text-slate-700 mb-4 leading-relaxed">{rec.description}</p>
+              <div className="flex items-center text-sm text-white bg-gradient-to-r from-emerald-500 to-teal-600 px-4 py-3 rounded-xl font-semibold shadow-lg">
+                <TrendingUp className="w-4 h-4 mr-2 flex-shrink-0" />
+                <span>Impact: {rec.potential_impact}</span>
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="bg-white rounded-2xl shadow-2xl p-8">
-        <div className="flex items-center mb-6">
-          <AlertTriangle className="w-8 h-8 text-purple-600 mr-3" />
-          <h2 className="text-2xl font-bold text-gray-800">Risk Assessment</h2>
+      <div className="bg-white/95 rounded-3xl shadow-2xl-purple p-8 sm:p-10 border border-slate-200/80 backdrop-blur-xl">
+        <div className="flex items-center mb-8">
+          <div className="bg-gradient-to-br from-red-100 to-orange-100 p-3 rounded-xl mr-4 border border-red-200/70">
+            <AlertTriangle className="w-8 h-8 text-red-700" />
+          </div>
+          <h2 className="text-2xl font-bold text-slate-800" style={{ fontFamily: 'var(--font-display)' }}>
+            Risk Assessment
+          </h2>
         </div>
-        <p className="text-gray-700 text-lg leading-relaxed">{risk_assessment}</p>
+        <p className="text-slate-700 text-lg leading-relaxed bg-red-50/50 p-6 rounded-xl border border-red-200/50">
+          {risk_assessment}
+        </p>
       </div>
 
-      <div className="bg-white rounded-2xl shadow-2xl p-8">
-        <div className="flex items-center mb-6">
-          <TrendingUp className="w-8 h-8 text-purple-600 mr-3" />
-          <h2 className="text-2xl font-bold text-gray-800">Tax Saving Opportunities</h2>
+      <div className="bg-white/95 rounded-3xl shadow-2xl-purple p-8 sm:p-10 border border-slate-200/80 backdrop-blur-xl">
+        <div className="flex items-center mb-8">
+          <div className="bg-gradient-to-br from-amber-100 to-yellow-100 p-3 rounded-xl mr-4 border border-amber-200/70">
+            <TrendingUp className="w-8 h-8 text-amber-700" />
+          </div>
+          <h2 className="text-2xl font-bold text-slate-800" style={{ fontFamily: 'var(--font-display)' }}>
+            Tax Saving Opportunities
+          </h2>
         </div>
         <ul className="space-y-3">
           {tax_saving_opportunities.map((opp, idx) => (
-            <li key={idx} className="flex items-start p-4 bg-green-50 rounded-lg border-2 border-green-200">
-              <Check className="w-5 h-5 text-green-600 mr-3 mt-1 flex-shrink-0" />
-              <span className="text-gray-700">{opp}</span>
+            <li key={idx} className="flex items-start p-4 bg-gradient-to-r from-emerald-50 to-teal-50 rounded-xl border-2 border-emerald-200/60 hover:shadow-lg transition-all">
+              <Check className="w-6 h-6 text-emerald-600 mr-3 mt-0.5 flex-shrink-0 font-bold" />
+              <span className="text-slate-700 font-medium">{opp}</span>
             </li>
           ))}
         </ul>
@@ -190,10 +220,10 @@ export default function AnalysisResults({ results, onReset }) {
 
       <button
         onClick={onReset}
-        className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white py-4 rounded-lg font-bold text-lg hover:from-purple-700 hover:to-indigo-700 transition-all transform hover:scale-105 flex items-center justify-center"
+        className="w-full bg-gradient-to-r from-teal-600 to-sky-600 text-white py-5 rounded-xl font-bold text-lg hover:from-teal-700 hover:to-sky-700 transition-all transform hover:scale-[1.01] shadow-lg shadow-sky-900/20 active:scale-[0.99] flex items-center justify-center space-x-2"
       >
-        <RefreshCw className="w-5 h-5 mr-2" />
-        Analyze Another Profile
+        <RefreshCw className="w-5 h-5" />
+        <span>Analyze Another Profile</span>
       </button>
     </div>
   );

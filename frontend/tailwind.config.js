@@ -40,7 +40,7 @@ export default {
           'to': { opacity: '1' },
         },
         'pulse-slow': {
-          '0_, 100%': { opacity: '1' },
+          '0%, 100%': { opacity: '1' },
           '50%': { opacity: '0.7' },
         },
         'scale-in': {
